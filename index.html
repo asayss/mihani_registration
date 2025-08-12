@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مهني - تسجيل مهني جديد</title>
+    <title>مهني MIHANI - تسجيل مهني جديد</title>
     <style>
         * {
             margin: 0;
@@ -39,6 +39,7 @@
             align-items: center;
             gap: 15px;
             flex: 1;
+            cursor: pointer;
         }
 
         .header-icon {
@@ -386,17 +387,17 @@
 <body>
     <div class="container">
         <div class="header fade-in">
-            <div class="header-left" onclick="goToHomepage()">
+            <div class="header-left" onclick="goBack()">
                 <div class="header-icon">
-                    <img src="data/icon.png" alt="أيقونة بريكول">
+                    <img src="data/icon.png" alt="أيقونة مهني">
                 </div>
                 <div class="header-text">
-                    <h1>مهني -MIHANI</h1>
+                    <h1>مهني MIHANI</h1>
                     <p>تسجيل مهني جديد</p>
                 </div>
             </div>
             <div class="header-controls">
-                <div class="home-btn" onclick="goToHomepage()" title="الصفحة الرئيسية">
+                <div class="home-btn" onclick="goBack()" title="الرجوع">
                     🏠
                 </div>
                 <a href="#" class="search-btn-top" onclick="goToSearchApp()" title="البحث في التطبيق">
@@ -407,7 +408,7 @@
 
         <div class="page-title fade-in">
             <h2>انضم إلى شبكة المهنيين المعتمدين</h2>
-            <p>اكمل النموذج أدناه للتسجيل في منصة بريكول وابدأ في استقبال طلبات العملاء</p>
+            <p>اكمل النموذج أدناه للتسجيل في منصة مهني وابدأ في استقبال طلبات العملاء</p>
         </div>
 
         <div class="info-section fade-in">
@@ -416,8 +417,7 @@
                 <li>معلومات شخصية أساسية</li>
                 <li>تفاصيل المهنة أو الحرفة</li>
                 <li>معلومات الاتصال</li>
-                <li>العنوان ومنطقة الخدمة</li>
-                <li>صور أعمال سابقة (اختياري)</li>
+                <li>العنوان ومنطقة الخدمة</li> 
             </ul>
         </div>
 
@@ -450,7 +450,7 @@
         </div>
 
         <div class="bottom-buttons fade-in">
-            <a href="#" class="small-button" onclick="goToHomepage()">
+            <a href="#" class="small-button" onclick="goBack()">
                 <span>🏠</span>
                 الرئيسية
             </a>
@@ -462,17 +462,19 @@
     </div>
 
     <script>
-        // دالة للانتقال للصفحة الرئيسية
-        function goToHomepage() {
-            // سيتم استبدال هذا الرابط برابط الصفحة الرئيسية الفعلية
-            const homepageUrl = "index.html"; // أو الرابط المناسب
-            window.location.href = homepageUrl;
+        // دالة للرجوع للصفحة السابقة
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.close();
+            }
         }
 
         // دالة للانتقال لتطبيق البحث
         function goToSearchApp() {
             // سيتم استبدال هذا الرابط برابط تطبيق البحث الفعلي
-            const searchAppUrl = "mihani_app.html"; // أو الرابط المناسب
+            const searchAppUrl = "https://asayss.github.io/mihani/"; // أو الرابط المناسب
             window.location.href = searchAppUrl;
         }
 
@@ -481,15 +483,6 @@
             const loadingMessage = document.querySelector('.loading-message');
             if (loadingMessage) {
                 loadingMessage.style.display = 'none';
-            }
-        }
-
-        // دالة للرجوع للصفحة السابقة
-        function goBack() {
-            if (window.history.length > 1) {
-                window.history.back();
-            } else {
-                goToHomepage();
             }
         }
 
