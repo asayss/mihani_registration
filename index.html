@@ -238,6 +238,14 @@
             position: relative;
         }
 
+        .form-container li {
+            color: yellow;
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding-right: 20px;
+            position: relative;
+        }
+
         .info-section li:before {
             content: "✓";
             color: #4caf50;
@@ -389,7 +397,7 @@
         <div class="header fade-in">
             <div class="header-left" onclick="goBack()">
                 <div class="header-icon">
-                    <img src="data/icon.png" alt="أيقونة مهني">
+                    <img src="icon.png" alt="أيقونة مهني">
                 </div>
                 <div class="header-text">
                     <h1>مهني MIHANI</h1>
@@ -412,7 +420,7 @@
         </div>
 
         <div class="info-section fade-in">
-            <h4>📋 ما تحتاجه للتسجيل:</h4>
+            <h4>📋 ما تحتاجه للتسجيل: </h4>
             <ul>
                 <li>الاسم ( الشخصي او المهني)</li>
                 <li>تفاصيل المهنة أو الحرفة</li>
@@ -425,6 +433,7 @@
             <div class="form-header">
                 <h3>نموذج التسجيل</h3>
                 <p>يرجى ملء جميع الحقول المطلوبة بدقة</p>
+                 <li>التأكد من الربط بالانترنت</li>
             </div>
             <div class="form-iframe-container">
                 <div class="loading-message">جارٍ تحميل النموذج...</div>
@@ -472,7 +481,7 @@
         // دالة للانتقال لتطبيق البحث
         function goToSearchApp() {
             // سيتم استبدال هذا الرابط برابط تطبيق البحث الفعلي
-            const searchAppUrl = "https://asayss.github.io/mihani/"; // أو الرابط المناسب
+            const searchAppUrl = "mihani_app.html"; // أو الرابط المناسب
             window.location.href = searchAppUrl;
         }
 
